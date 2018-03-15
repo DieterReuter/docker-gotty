@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-gotty-svc
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+      name: gotty-8080-tcp
+  type: NodePort
+  selector:
+    app: kube-gotty-pod
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kube-gotty-pod
+spec:
+  containers:
+  - name: kube-gotty-container
+    image: dieterreuter/gotty
