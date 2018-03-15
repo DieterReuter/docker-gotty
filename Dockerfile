@@ -33,10 +33,10 @@ RUN set -ex && \
     \
     \
     # Step 3: install additional dependencies and packages \
-    ###apk add --no-cache bash && \
+    apk add --no-cache jq && \
     \
     #--- remove build dependencies --- \
-    apk del curl glibc-bin glibc-i18n && \
+    apk del glibc-bin glibc-i18n && \
     rm -rf /tmp/* /var/cache/apk/*
 
 # Set standard start command for GoTTY
