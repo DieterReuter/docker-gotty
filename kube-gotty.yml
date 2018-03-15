@@ -17,6 +17,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: kube-gotty-pod
+  labels:
+    app: kube-gotty-pod
 spec:
   containers:
   - name: kube-gotty-container
